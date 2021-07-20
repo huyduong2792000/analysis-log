@@ -66,7 +66,7 @@ def convert_file():
                         link_unknow = line[9]
                         browser = line[10]
                         ip = line[-3]
-                        time_res = line[-2]
+                        time_res = line[-2]*1000
 
                         dict_tempt = {'remote_ip': remote_ip, 'ip_client': ip_client, 'time': time, 'domain': domain, 'method': method,
                                       'rote': rote, 'http': http, 'status': status, 'res_size': data,
