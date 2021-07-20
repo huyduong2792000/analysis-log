@@ -57,7 +57,7 @@ def stream(limit = 1000):
                     sent_count += 1
                     if interval_count >= 15:
                         interval_count = 0
-                        producer.flush()
+                        json_producer.flush()
 
 
 if __name__ == '__main__':
