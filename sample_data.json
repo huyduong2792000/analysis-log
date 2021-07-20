@@ -1,0 +1,15 @@
+{
+    "status": "200",
+    "domain": "cafef.vn",
+    "http": "HTTP/1.1\"",
+    "upstream_addr": "192.168.241.100:7682",
+    "ip_client": "1.52.123.46",
+    "remote_ip": "192.168.241.123",
+    "res_size": "17304",
+    "link_unknow": "\"https://s.cafef.vn/\"",
+    "res_duration": "2",
+    "time": "2021-03-21T23:58:54+07:00",
+    "rote": "/doanh-nghiep.chn",
+    "method": "\"GET",
+    "browser": "\"Mozilla/5.0"
+}
