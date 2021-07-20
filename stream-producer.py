@@ -60,5 +60,4 @@ def stream(limit = 1000):
                         json_producer.flush()
 
 
-if __name__ == '__main__':
-    stream(1000)
+stream(1000)
