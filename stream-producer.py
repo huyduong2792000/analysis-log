@@ -22,7 +22,7 @@ def stream(limit = 1000):
     for file_name in list_file:
         print("===filename===", file_name)
         interval_count = 0
-        with open(BASE_PATH + file_name) as json_log_file:
+        with open(BASE_PATH + '/' + file_name) as json_log_file:
             for line in json_log_file:
                 if line:
                     json_producer.send(TOPIC, json.loads(line))
