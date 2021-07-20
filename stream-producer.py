@@ -50,7 +50,6 @@ def stream(limit = 1000):
         interval_count = 0
         with open(BASE_PATH + '/' + file_name) as json_log_file:
             for line in json_log_file:
-                time.sleep(1)
                 line_dict = log_to_dict(line)
                 if line:
                     json_producer.send(TOPIC, line_dict)
