@@ -7,7 +7,7 @@
     "remote_ip": "192.168.241.123",
     "response_size": "17304",
     "link_unknow": "\"https://s.cafef.vn/\"",
-    "res_duration": "0.002",
+    "res_duration": "0.002", s -> ms (1000)
     "time": "2021-03-21T23:58:54+07:00",
     "rote": "/doanh-nghiep.chn",
     "method": "\"GET",
