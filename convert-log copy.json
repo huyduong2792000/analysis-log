@@ -5,7 +5,7 @@
     "upstream_addr": "192.168.241.100:7682",
     "ip_client": "1.52.123.46",
     "remote_ip": "192.168.241.123",
-    "response_size": "17304",
+    "res_size": "17304",
     "link_unknow": "\"https://s.cafef.vn/\"",
     "res_duration": "0.002", s -> ms (1000)
     "time": "2021-03-21T23:58:54+07:00",

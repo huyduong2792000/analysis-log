@@ -54,8 +54,8 @@ def convert_file():
                     line = line.split(' ')
                     if len(line) > 10:
                     # print (line)
-                        ip1 = line[0]
-                        ip2 = line[1]
+                        remote_ip = line[0]
+                        ip_client = line[1]
                         time = line[2].replace('[', '').replace(']', '')
                         domain = line[3]
                         method = line[4]
@@ -68,10 +68,10 @@ def convert_file():
                         ip = line[-3]
                         time_res = line[-2]
 
-                        dict_tempt = {'ip1': ip1, 'ip2': ip2, 'time': time, 'domain': domain, 'method': method,
-                                      'rote': rote, 'http': http, 'status': status, 'data': data,
+                        dict_tempt = {'remote_ip': remote_ip, 'ip_client': ip_client, 'time': time, 'domain': domain, 'method': method,
+                                      'rote': rote, 'http': http, 'status': status, 'res_size': data,
                                       'link_unknow': link_unknow,
-                                      'browser': browser, 'ip': ip, 'time_res': time_res}
+                                      'browser': browser, 'upstream_addr': ip, 'res_duration': time_res}
                         file_json.write(json.dumps(dict_tempt) + '\n');
                 else:
                     continue
@@ -87,8 +87,8 @@ def convert():
             for line in logs:
                 line = line.split(' ')
                 # print (line)
-                ip1 = line[0]
-                ip2 = line[1]
+                remote_ip = line[0]
+                ip_client = line[1]
                 time = line[2].replace('[','').replace(']','')
                 domain = line[3]
                 method = line[4]
@@ -101,9 +101,9 @@ def convert():
                 ip = line[-3]
                 time_res = line[-2]
 
-                dict_tempt = {'ip1': ip1, 'ip2': ip2, 'time': time, 'domain': domain, 'method': method,
-                              'rote': rote, 'http': http, 'status': status, 'data': data, 'link_unknow':link_unknow,
-                              'browser': browser, 'ip': ip, 'time_res': time_res}
+                dict_tempt = {'remote_ip': remote_ip, 'ip_client': ip_client, 'time': time, 'domain': domain, 'method': method,
+                              'rote': rote, 'http': http, 'status': status, 'res_size': data, 'link_unknow':link_unknow,
+                              'browser': browser, 'upstream_addr': ip, 'res_duration': time_res}
                 result.append(dict_tempt)
     file_json = open("result3.json", "a+")
     print(file_json)
