@@ -5,7 +5,7 @@ from kafka import KafkaProducer
 
 TOPIC = 'test-druid'
 BASE_PATH = "/data/2021-03-21/data/2021-03-21"
-def list_file():
+def get_log_files():
     result = os.listdir(os.path.expanduser(BASE_PATH))
     print ('Số file:', len(result))
     return result
@@ -17,7 +17,7 @@ def stream(limit = 1000):
     else:
         return
     json_producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v).encode('utf-8'))
-    list_file = list_file()
+    list_file = get_log_files()
 
     for file_name in list_file:
         print("===filename===", file_name)
