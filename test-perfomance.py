@@ -16,6 +16,6 @@ def get_log_files():
     print ('index:', result.index('mtuoitre-107-proxy-cache.log'))
 
     return result
-
+get_log_files()
 # test = ['a', 'b', 'c']
 # print(test.index('a'))
