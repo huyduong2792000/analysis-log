@@ -19,7 +19,7 @@ TOPIC = 'test-druid4'
 BASE_PATH = "/data/2021-03-21/data/2021-03-21"
 
 list_cofig = [
-    '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $gzip_ratio $request_length $request_time "$sent_http_servername" $upstream_addr'
+    '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $gzip_ratio $request_length $request_time "$sent_http_servername" $upstream_addr',
     '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $gzip_ratio $request_length $request_time $upstream_addr $srcache_fetch_status $srcache_store_status',
 ]
 
@@ -36,7 +36,7 @@ def get_log_files():
     print ('Số file:', len(result))
     return result
 
-def log_to_dict(raw_log):
+def log_to_dict(raw_log = None):
     print("===raw log===", raw_log)
     for regex in list_regex:
         m = re.match(regex, raw_log)
@@ -59,3 +59,4 @@ def stream(limit = 1000):
 
 
 stream(1000)
+# log_to_dict()
