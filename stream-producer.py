@@ -3,7 +3,7 @@ import json
 import time
 from kafka import KafkaProducer
 
-TOPIC = 'test-druid5'
+TOPIC = 'test-druid7'
 BASE_PATH = "/data/2021-03-21/data/2021-03-21"
 def get_log_files():
     result = os.listdir(os.path.expanduser(BASE_PATH))
