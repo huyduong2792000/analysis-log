@@ -41,7 +41,7 @@ def get_log_files():
     return result
 
 def log_to_dict(raw_log = None):
-    raw_log = '192.168.6.220 14.228.146.177 [2021-03-21T01:47:44+07:00] m.gamek.vn "GET /ajax-count-commnent.chn HTTP/1.1" 200 296 "https://m.gamek.vn/faker-032010295194.chn" "Mozilla/5.0" - 2232 192.168.5.35:8510 0.018'
+    # raw_log = '192.168.6.220 14.228.146.177 [2021-03-21T01:47:44+07:00] m.gamek.vn "GET /ajax-count-commnent.chn HTTP/1.1" 200 296 "https://m.gamek.vn/faker-032010295194.chn" "Mozilla/5.0" - 2232 192.168.5.35:8510 0.018'
     print("===raw log===", raw_log)
     for regex in list_regex:
         m = re.match(regex, raw_log)
