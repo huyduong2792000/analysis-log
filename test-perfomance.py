@@ -29,8 +29,9 @@ def get_log_files():
 
 def log_to_dict(raw_log):
     m = re.match(regex, raw_log)
-    return m.groupdict()
-
+    if m:
+        return m.groupdict()
+    return None
 def stream(limit = 1000):
     json_producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v, indent = 4).encode('utf-8'))
     list_file = get_log_files()
