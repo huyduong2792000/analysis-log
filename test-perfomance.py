@@ -14,6 +14,9 @@ import os
 import json
 import time
 from kafka import KafkaProducer
+from manager import Manager
+
+manager = Manager()
 
 TOPIC = 'test-druid4'
 BASE_PATH = "/data/2021-03-21/data/2021-03-21"
@@ -42,26 +45,33 @@ def get_log_files():
 
 def log_to_dict(raw_log = None):
     # raw_log = '192.168.6.220 14.228.146.177 [2021-03-21T01:47:44+07:00] m.gamek.vn "GET /ajax-count-commnent.chn HTTP/1.1" 200 296 "https://m.gamek.vn/faker-032010295194.chn" "Mozilla/5.0" - 2232 192.168.5.35:8510 0.018'
-    print("===raw log===", raw_log)
+    # print("===raw log===", raw_log)
     for regex in list_regex:
         m = re.match(regex, raw_log)
         if m:
             return m.groupdict()
     return None
-def stream(limit = 1000):
+
+@manager.command
+def stream(start=0, stop=10):
+    print("==start==", start)
+    print("===stop===", stop)
     # json_producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v, indent = 4).encode('utf-8'))
     list_file = get_log_files()
 
-    for file_name in list_file[1000: 1200]:
+    for file_name in list_file[start: stop]:
         with open(BASE_PATH + '/' + file_name) as json_log_file:
             for line in json_log_file:
                 line_dict = log_to_dict(line)
                 line_dict['file_name'] = file_name
-                print("==line_dict===", line_dict)
+                # print("==line_dict===", line_dict)
                 # if line:
                 #     json_producer.send(TOPIC, line_dict)
                 #     json_producer.flush()
 
 
-stream(1000)
+# stream(1000)
 # log_to_dict()
+
+if __name__ == '__main__':
+    manager.main()
