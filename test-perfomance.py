@@ -18,7 +18,7 @@ from kafka import KafkaProducer
 TOPIC = 'test-druid4'
 BASE_PATH = "/data/2021-03-21/data/2021-03-21"
 
-conf = '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $gzip_ratio $request_length $request_time $upstream_addr $srcache_fetch_status $srcache_store_status'
+conf = '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $gzip_ratio $request_length $request_time $upstream_addr $srcache_fetch_status $srcache_store_status '
 regex = ''.join(
     '(?P<' + g + '>.*?)' if g else re.escape(c)
     for g, c in re.findall(r'\$(\w+)|(.)', conf))
