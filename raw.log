@@ -1,1 +1,53 @@
 192.168.241.119 14.169.52.225 [2021-03-21T23:58:54+07:00] cafebiz.vn "GET /ong-trum-kin-tieng-thi-cong-thiet-ke-cho-hang-loat-chuoi-the-coffee-house-bach-hoa-xanh-fpt-vingroup-flc-moi-3-nam-tuoi-doanh-thu-vai-tram-ty-dong-nam-20210313224854838.chn HTTP/1.1" 200 156270 "-" "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; MDDC)" - 695 192.168.241.108:7695 0.002 -
+
+
+192.168.6.57 149.28.159.150 [2021-03-21T23:58:58+07:00] cache_phunuvietnam "GET /tieu-dung.rss HTTP/1.0" 200 32100 "-" "python-requests/2.18.4" - 242 0.053 "23" 10.5.24.23:9210
+192.168.6.49 149.28.159.150 [2021-03-21T23:58:56+07:00] cache_phunuvietnam "GET /xa-hoi.rss HTTP/1.0" 200 32918 "-" "python-requests/2.18.4" - 239 0.050 "23" 10.5.24.25:9210
+172.18.2.27 169.62.159.227 [2021-03-20T23:59:19+07:00] cache_sport5 "GET / HTTP/1.0" 200 29902 "-" "gdnsd-monitor" - 141 0.001 - HIT BYPASS
+
+172.18.2.32 46.105.32.156 [2021-03-20T23:59:21+07:00] cache_sport5 "GET /aguero-tro-lai-va-ghi-ban-man-city-tao-khoang-cach-17-diem-voi-mu-tai-premier-league-20210314054015693.htm HTTP/1.0" 200 20432 "-" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)" - 568 0.000 - HIT BYPASS
+
+172.18.2.33 125.137.18.243 [2021-03-20T23:59:23+07:00] cache_sport5 "GET /timeline/9/trang-2.chn HTTP/1.0" 200 5348 "https://sport5.vn/nga-pika-meo-sao-hoa-doi-dau-trong-bo-anh-doc-tiep-lua-tran-derby-thanh-manchester-20201212121504312.htm?fbclid=IwAR0bHR6WxjMwPWcRsz-DTsVv23RY4PoTdwhPV72oOYxyw2HgGhbr27UkzIQ" "Mozilla/5.0 (iPad; CPU OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 [FBAN/FBIOS;FBAV/278.0.0.38.115;FBBV/229103054;FBDV/iPad7,3;FBMD/iPad;FBSN/iOS;FBSV/14.0.1;FBSS/2;FBID/tablet;FBLC/vi_VN;FBOP/5;FBRV/233264458]" - 939 0.255 10.5.24.242:8041 BYPASS BYPASS
+
+172.18.2.32 103.39.95.231 [2021-03-21T00:00:59+07:00] cache_sport5 "GET /videos/bong-da-viet-nam.htm HTTP/1.0" 200 9113 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" - 369 0.075 10.5.24.242:8041 MISS STORE
+172.18.2.32 66.249.71.58 [2021-03-21T00:01:22+07:00] cache_sport5 "GET /phan-tich-tran-dau/sporting-clube-de-portugal-vitoria-guimaraes-366c0d832c090f8591ab5f322584bd50.htm HTTP/1.0" 200 14391 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" - 498 0.036 10.3.11.47:8041 MISS STORE
+172.18.2.33 210.245.87.125 [2021-03-21T00:03:25+07:00] cache_sport5 "GET / HTTP/1.0" 200 29902 "-" "gdnsd-monitor" - 141 0.000 - HIT BYPASS
+
+
+
+
+21/3/2021: 192.168.6.86 149.28.159.150 [2021-03-21T23:58:40+07:00] cache_phunuvietnam "GET /dep.rss HTTP/1.0" 200 30723 "-" "python-requests/2.18.4" - 236 0.069 "160" 10.3.11.160:9210
+
+20/3/2021: 172.18.2.32 46.105.32.156 [2021-03-20T23:59:21+07:00] cache_sport5 "GET /aguero-tro-lai-va-ghi-ban-man-city-tao-khoang-cach-17-diem-voi-mu-tai-premier-league-20210314054015693.htm HTTP/1.0" 200 20432 "-" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)" - 568 0.000 - HIT BYPASS
+
+            172.18.2.32 103.39.95.231 [2021-03-20T23:59:46+07:00] cache_sport5 "GET /chuyen-nhuong.htm HTTP/1.0" 200 20998 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" - 359 0.000 - HIT BYPASS
+
+            172.18.2.33 169.62.159.227 [2021-03-20T23:59:49+07:00] cache_sport5 "GET / HTTP/1.0" 200 29902 "-" "gdnsd-monitor" - 141 0.001 - HIT BYPASS
+
+            172.18.2.27 103.39.95.231 [2021-03-21T00:06:51+07:00] cache_sport5 "GET /gddh-tran-chu-sa-vba-2021-se-la-mua-giai-dac-biet-nhat-voi-nhung-con-so-6-3-8-2-20210212231211559.htm HTTP/1.0" 200 17231 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" - 443 0.000 - HIT BYPASS
+
+            172.18.2.33 103.39.95.231 [2021-03-21T00:08:02+07:00] cache_sport5 "GET /thoa-thuan.htm HTTP/1.0" 200 103118 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" - 356 0.054 10.5.24.100:8041 MISS STORE
+
+            172.18.2.32 103.39.95.231 [2021-03-21T00:08:04+07:00] cache_sport5 "GET /videos/bong-da.htm HTTP/1.0" 200 9335 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" - 360 0.067 10.3.11.47:8041 MISS STORE
+
+172.18.2.32 103.39.95.231 [2021-03-21T00:06:49+07:00] cache_sport5 "GET /thoa-thuan.htm HTTP/1.0" 200 103255 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" - 356 0.028 10.3.11.47:8041 MISS STORE
+172.18.2.33 103.39.95.231 [2021-03-21T00:06:48+07:00] cache_sport5 "GET /lich-thi-dau.htm HTTP/1.0" 200 28414 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" - 358 0.018 10.5.24.100:8041 BYPASS BYPASS
+172.18.2.27 103.39.95.231 [2021-03-21T00:06:49+07:00] cache_sport5 "GET /vo-kim-ban-va-hanh-trinh-tu-thang-nhoc-quay-pha-ham-choi-den-ngoi-sao-bong-ro-20210212225210369.htm HTTP/1.0" 200 14247 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" - 441 0.001 - HIT BYPASS
+giống nhau: 
+    giống đến chỗ time response
+khách nhau:
+    - HIT BYPASS: ngay sau dấu - sau time response
+    - MISS STORE: ngay sau upstream_addr
+    - BYPASS BYPASS: ngay sau upstream_addr
+
+    HIT >< MISS: cache hit và cache miss
+    STORE >< BYPASS
+
+    nếu không có upstream_addr thì sẽ được thay thế bằng dấu -
+
+    không có upstream_addr => HIT BYPASS
+
+    có upstream_addr => MISS STORE
+
+    nếu không có kiểu cache ở cuối thì thường có giá trị "gì đấy" ở ngay sau response_time(thường là bot của gg, filefox, ... quét)
+    =? chuẩn là sẽ phải có loại cache ở sau cùng
