@@ -22,9 +22,6 @@ list_cofig = [
     '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $gzip_ratio $request_length $request_time "$sent_http_servername" $upstream_addr'
     '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $gzip_ratio $request_length $request_time $upstream_addr $srcache_fetch_status $srcache_store_status',
 ]
-regex = ''.join(
-    '(?P<' + g + '>.*)' if g else re.escape(c)
-    for g, c in re.findall(r'\$(\w+)|(.)', conf2))
 
 list_regex = []
 
