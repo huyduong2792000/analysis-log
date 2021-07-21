@@ -63,5 +63,5 @@ def stream(limit = 1000):
                 #     json_producer.flush()
 
 
-# stream(1000)
-log_to_dict()
+stream(1000)
+# log_to_dict()
