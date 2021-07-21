@@ -52,11 +52,11 @@ def stream(limit = 1000):
     # json_producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v, indent = 4).encode('utf-8'))
     list_file = get_log_files()
 
-    for file_name in list_file[1300: 1350]:
-        print("===filename===", file_name)
+    for file_name in list_file[1350: 1400]:
         with open(BASE_PATH + '/' + file_name) as json_log_file:
             for line in json_log_file:
                 line_dict = log_to_dict(line)
+                line_dict['file_name'] = file_name
                 print("==line_dict===", line_dict)
                 # if line:
                 #     json_producer.send(TOPIC, line_dict)
