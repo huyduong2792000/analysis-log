@@ -60,7 +60,7 @@ def stream(start=0, stop=10):
     list_file = get_log_files()
 
     for idx, file_name in enumerate(list_file[start: stop]):
-        print("===file===" + str(start + idx) + "/" + stop)
+        print("===file===" + str(start + idx) + "/" + str(stop))
         with open(BASE_PATH + '/' + file_name) as json_log_file:
             for line in json_log_file:
                 line_dict = log_to_dict(line)
