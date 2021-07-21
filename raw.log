@@ -33,6 +33,11 @@
 172.18.2.32 103.39.95.231 [2021-03-21T00:06:49+07:00] cache_sport5 "GET /thoa-thuan.htm HTTP/1.0" 200 103255 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" - 356 0.028 10.3.11.47:8041 MISS STORE
 172.18.2.33 103.39.95.231 [2021-03-21T00:06:48+07:00] cache_sport5 "GET /lich-thi-dau.htm HTTP/1.0" 200 28414 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" - 358 0.018 10.5.24.100:8041 BYPASS BYPASS
 172.18.2.27 103.39.95.231 [2021-03-21T00:06:49+07:00] cache_sport5 "GET /vo-kim-ban-va-hanh-trinh-tu-thang-nhoc-quay-pha-ham-choi-den-ngoi-sao-bong-ro-20210212225210369.htm HTTP/1.0" 200 14247 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" - 441 0.001 - HIT BYPASS
+172.18.2.27 103.39.95.231 [2021-03-21T00:17:27+07:00] cache_sport5 "GET /dtdv.html HTTP/1.0" 200 19182 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36" - 351 0.256 10.3.11.47:8041 BYPASS BYPASS
+
+
+192.168.6.49 203.205.33.169 [2021-03-21T11:14:44+07:00] cache_phunuvietnam "GET /feed HTTP/1.0" 301 367 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36" - 316 0.006 "23" 172.16.41.25:9210
+172.18.2.33 210.245.87.125 [2021-03-21T03:10:05+07:00] cache_sport5 "GET / HTTP/1.0" 200 29869 "-" "gdnsd-monitor" - 141 0.000 - HIT BYPASS
 giống nhau: 
     giống đến chỗ time response
 khách nhau:
