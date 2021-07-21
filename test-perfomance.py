@@ -18,7 +18,7 @@ from manager import Manager
 
 manager = Manager()
 
-TOPIC = 'test-druid5'
+TOPIC = 'test-druid7'
 BASE_PATH = "/data/2021-03-21/data/2021-03-21"
 
 # list_cofig = [
