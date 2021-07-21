@@ -54,12 +54,13 @@ def log_to_dict(raw_log = None):
 
 @manager.command
 def stream(start=0, stop=10):
-    print("===start==", start)
-    print("===stop===", stop)
+    # print("===start==", start)
+    # print("===stop===", stop)
     json_producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v, indent = 4).encode('utf-8'))
     list_file = get_log_files()
 
-    for file_name in list_file[start: stop]:
+    for idx, file_name in enumerate(list_file[start: stop]):
+        print("===file===" + str(start + idx) + "/" + stop)
         with open(BASE_PATH + '/' + file_name) as json_log_file:
             for line in json_log_file:
                 line_dict = log_to_dict(line)
