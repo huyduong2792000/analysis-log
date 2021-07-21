@@ -38,6 +38,7 @@
 
 192.168.6.49 203.205.33.169 [2021-03-21T11:14:44+07:00] cache_phunuvietnam "GET /feed HTTP/1.0" 301 367 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36" - 316 0.006 "23" 172.16.41.25:9210
 172.18.2.33 210.245.87.125 [2021-03-21T03:10:05+07:00] cache_sport5 "GET / HTTP/1.0" 200 29869 "-" "gdnsd-monitor" - 141 0.000 - HIT BYPASS
+192.168.6.220 14.228.146.177 [2021-03-21T01:47:44+07:00] m.gamek.vn "GET /ajax-count-commnent.chn?newsUrl=https%3A%2F%2Fgamek.vn%2Fc109n2021032010295194.chn HTTP/1.1" 200 296 "https://m.gamek.vn/faker-em-cam-giac-minh.chn" "Mozilla/5.0 (Linux; Android 11; SM-N975F Build/RP1A.200720.012; wv)" - 2232 192.168.5.35:8510 0.018
 giống nhau: 
     giống đến chỗ time response
 khách nhau:

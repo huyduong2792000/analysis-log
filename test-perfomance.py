@@ -19,6 +19,7 @@ TOPIC = 'test-druid4'
 BASE_PATH = "/data/2021-03-21/data/2021-03-21"
 
 list_cofig = [
+    '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $gzip_ratio $request_length $upstream_addr $request_time',
     '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $gzip_ratio $request_length $request_time "$sent_http_servername" $upstream_addr',
     '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $gzip_ratio $request_length $request_time $upstream_addr $srcache_fetch_status $srcache_store_status',
 ]
@@ -37,6 +38,7 @@ def get_log_files():
     return result
 
 def log_to_dict(raw_log = None):
+    # raw_log = '192.168.6.220 14.228.146.177 [2021-03-21T01:47:44+07:00] m.gamek.vn "GET /ajax-count-commnent.chn HTTP/1.1" 200 296 "https://m.gamek.vn/faker-032010295194.chn" "Mozilla/5.0" - 2232 192.168.5.35:8510 0.018'
     print("===raw log===", raw_log)
     for regex in list_regex:
         m = re.match(regex, raw_log)
