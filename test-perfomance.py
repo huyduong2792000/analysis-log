@@ -18,7 +18,7 @@ from kafka import KafkaProducer
 TOPIC = 'test-druid4'
 BASE_PATH = "/data/2021-03-21/data/2021-03-21"
 
-conf = '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $gzip_ratio $request_length $request_time $upstream_addr $srcache_fetch_status $srcache_store_status '
+conf = '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $gzip_ratio $request_length $request_time $upstream_addr $srcache_fetch_status $srcache_store_status'
 regex = ''.join(
     '(?P<' + g + '>.*?)' if g else re.escape(c)
     for g, c in re.findall(r'\$(\w+)|(.)', conf))
@@ -31,7 +31,6 @@ def get_log_files():
 
 def log_to_dict(raw_log):
     print("===raw log===", raw_log)
-    # 192.168.6.49 148.251.69.139 [2021-03-21T09:21:25+07:00] cache_phunuvietnam "GET /tim-kiem/?key=v%C6%B0%E1%BB%A3t%20qua%20d%C6%B0%20lu%E1%BA%ADn HTTP/1.0" 301 380 "-" "Mozilla/5.0 (compatible; MJ12bot/v1.4.8; http://mj12bot.com/)" - 535 0.009 "23" 10.5.24.25:9210
     m = re.match(regex, raw_log)
     if m:
         return m.groupdict()
