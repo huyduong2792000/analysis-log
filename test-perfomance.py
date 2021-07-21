@@ -18,7 +18,7 @@ from manager import Manager
 
 manager = Manager()
 
-TOPIC = 'test-druid4'
+TOPIC = 'test-druid5'
 BASE_PATH = "/data/2021-03-21/data/2021-03-21"
 
 # list_cofig = [
@@ -54,9 +54,9 @@ def log_to_dict(raw_log = None):
 
 @manager.command
 def stream(start=0, stop=10):
-    print("==start==", start)
+    print("===start==", start)
     print("===stop===", stop)
-    # json_producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v, indent = 4).encode('utf-8'))
+    json_producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v, indent = 4).encode('utf-8'))
     list_file = get_log_files()
 
     for file_name in list_file[start: stop]:
@@ -65,9 +65,9 @@ def stream(start=0, stop=10):
                 line_dict = log_to_dict(line)
                 line_dict['file_name'] = file_name
                 # print("==line_dict===", line_dict)
-                # if line:
-                #     json_producer.send(TOPIC, line_dict)
-                #     json_producer.flush()
+                if line:
+                    json_producer.send(TOPIC, line_dict)
+                    json_producer.flush()
 
 
 # stream(1000)
