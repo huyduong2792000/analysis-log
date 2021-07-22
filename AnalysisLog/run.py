@@ -25,20 +25,11 @@ def stream(raw_log):
     if dict_log:
         future = json_producer.send(TOPIC, dict_log)
         json_producer.flush()
-def do_work(in_queue, out_list):
+def do_work(in_queue):
     while True:
-        item = in_queue.get()
-        line = item
+        line = in_queue.get()
         print("===line===", line)
-        # exit signal 
-        # if line == None:
-        #     return
-        stream(line)
-        # fake work
-        # time.sleep(.5)
-        # print("===line===", line)
-        # out_list.append(line)
-
+        # stream(line)
 
 if __name__ == "__main__":
     num_workers = 4
@@ -54,7 +45,7 @@ if __name__ == "__main__":
     # start for workers    
     pool = []
     for i in range(0, num_workers):
-        p = Process(target=do_work, args=(work, results))
+        p = Process(target=do_work, args=(work))
         p.start()
         pool.append(p)
 
