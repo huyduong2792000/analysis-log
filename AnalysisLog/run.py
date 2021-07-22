@@ -42,9 +42,9 @@ def parse_log_to_dict(raw_log = None):
 def stream(raw_log, file_name):
     dict_log = parse_log_to_dict(raw_log)
     dict_log['file_name'] = file_name
-    if dict_log:
-        future = json_producer.send(TOPIC, dict_log)
-        json_producer.flush(30)
+    # if dict_log:
+    #     future = json_producer.send(TOPIC, dict_log)
+    #     json_producer.flush(30)
 @manager.command
 def run():
     start = time.time()
@@ -57,7 +57,7 @@ def run():
             for line in logs:
                 log_count += 1
                 print("===log_count===", log_count)
-                # stream(line, file_name)
+                stream(line, file_name)
     stop = time.time()
 
     print("===duration===", stop - start)
