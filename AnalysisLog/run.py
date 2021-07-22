@@ -1,9 +1,14 @@
 import re
-import os
+# import os
 import json
 import time
 from kafka import KafkaProducer
 from manager import Manager
+
+from os import listdir
+from os.path import isfile, join
+onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+
 manager = Manager()
 
 json_producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v, indent = 4).encode('utf-8'))
@@ -23,9 +28,9 @@ for conf in list_cofig:
 
 
 def load_files(log_dir):
-    list_file = os.listdir(os.path.expanduser(log_dir))
-    print ('Số file:', len(list_file))
-    return list_file
+    onlyfiles = [f for f in listdir(log_dir) if isfile(join(mypath, f))]
+    print ('Số file:', len(onlyfiles))
+    return onlyfiles
 
 def parse_log_to_dict(raw_log = None):
     for regex in list_regex:
