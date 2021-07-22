@@ -43,9 +43,8 @@ def stream(raw_log, file_name):
     dict_log = parse_log_to_dict(raw_log)
     dict_log['file_name'] = file_name
     if dict_log:
-        print("===dict_log===", dict_log)
         json_producer.send(TOPIC, dict_log)
-        json_producer.flush(30)
+        json_producer.flush(300)
 
 @manager.command
 def run():
