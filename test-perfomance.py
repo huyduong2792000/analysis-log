@@ -67,7 +67,7 @@ def stream(start=0, stop=10):
                 line_dict = log_to_dict(line)
                 line_dict['file_name'] = file_name
                 # print("==line_dict===", line_dict)
-                if line:
+                if line_dict:
                     json_producer.send(TOPIC, line_dict)
                     json_producer.flush()
 
