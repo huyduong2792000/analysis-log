@@ -31,6 +31,7 @@ def do_work(in_queue):
         print("===line===", line)
         # stream(line)
 
+
 if __name__ == "__main__":
     num_workers = 4
 
@@ -52,7 +53,7 @@ if __name__ == "__main__":
 
     # produce data
 
-    # for p in pool:
-    #     p.join()
+    for p in pool:
+        p.join()
 
     # print(results)
