@@ -43,9 +43,10 @@ def stream(raw_log, file_name):
     dict_log = parse_log_to_dict(raw_log)
     dict_log['file_name'] = file_name
     if dict_log:
-        res = json_producer.send(TOPIC, dict_log)
+        future = json_producer.send(TOPIC, dict_log)
+        result = future.get(timeout=60)
+        print("===result===", result)
         json_producer.flush(30)
-        print("===res===", res)
 @manager.command
 def run():
     files = load_files(log_dir)
