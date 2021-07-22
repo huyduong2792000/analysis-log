@@ -59,8 +59,8 @@ def run():
         with open('{log_dir}/{file_name}'.format(log_dir = log_dir, file_name = file_name)) as logs:
             for line in logs:
                 log_count += 1
-                print("===log_count===", log_count)
-                stream(line, file_name)
+                # print("===log_count===", log_count)
+                # stream(line, file_name)
     stop = time.time()
 
     print("===duration===", stop - start)
