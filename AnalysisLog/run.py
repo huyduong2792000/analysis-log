@@ -34,8 +34,9 @@ def load_files(log_dir):
 
 def parse_log_to_dict(raw_log = None):
     m = re.match(list_regex[0], raw_log)
-    if m:
-        return m.groupdict()
+    # if m:
+    #     return m.groupdict()
+    return {}
     # for regex in list_regex:
     #     m = re.match(regex, raw_log)
     #     if m:
