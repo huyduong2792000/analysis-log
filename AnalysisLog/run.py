@@ -48,12 +48,16 @@ def stream(raw_log, file_name):
 @manager.command
 def run():
     start = time.time()
+    log_count = 0
     files = load_files(log_dir)
     print("===", files)
+
     for file_name in files:
         with open('{log_dir}/{file_name}'.format(log_dir = log_dir, file_name = file_name)) as logs:
             for line in logs:
-                stream(line, file_name)
+                log_count += 1
+                print("===log_count===", log_count)
+                # stream(line, file_name)
     stop = time.time()
 
     print("===duration===", stop - start)
