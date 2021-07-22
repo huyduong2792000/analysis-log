@@ -8,7 +8,7 @@ manager = Manager()
 
 json_producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v, indent = 4).encode('utf-8'))
 log_dir = '/var/log/nginx'
-TOPIC = 'test-druid7'
+TOPIC = 'test-druid5'
 
 list_cofig = [
     '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $rest_value'
