@@ -42,7 +42,7 @@ def stream(raw_log, file_name):
 
 @manager.command
 def run():
-    files = load_files()
+    files = load_files(log_dir)
     print("===", files)
     for file_name in files:
         with open('log_dir/{file_name}'.format(file_name = file_name)) as logs:
