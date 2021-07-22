@@ -66,5 +66,5 @@ def run():
     stop = time.time()
 
     print("===duration===", stop - start)
-# if __name__ == '__main__':
-#     manager.main()
+if __name__ == '__main__':
+    manager.main()
