@@ -17,7 +17,7 @@ def parse_log_to_dict(raw_log = None):
 def do_work(in_queue, out_list):
     while True:
         item = in_queue.get()
-        line_no, line = item
+        line = item
 
         # exit signal 
         if line == None:
@@ -25,9 +25,8 @@ def do_work(in_queue, out_list):
 
         # fake work
         # time.sleep(.5)
-        result = (line_no, line)
         # print("===result===", result)
-        out_list.append(result)
+        out_list.append(line)
 
 
 if __name__ == "__main__":
@@ -45,11 +44,10 @@ if __name__ == "__main__":
         pool.append(p)
 
     # produce data
-    with open("/home/vunm/analysis-log/msoha-27-rq.log") as f:
-        iters = itertools.chain(f, (None,)*num_workers)
-        print("===iters===", iters)
-        for num_and_line in enumerate(iters):
-            work.put(num_and_line)
+    with open("/home/vunm/analysis-log/msoha-27-rq.log") as logs:
+        # iters = itertools.chain(f, (None,)*num_workers)
+        for line in logs:
+            work.put(line)
 
     for p in pool:
         p.join()
