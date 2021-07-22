@@ -26,8 +26,7 @@ def do_work(in_queue, out_list):
         # fake work
         # time.sleep(.5)
         result = (line_no, line)
-        print("===result===", result)
-
+        # print("===result===", result)
         out_list.append(result)
 
 
@@ -48,12 +47,11 @@ if __name__ == "__main__":
     # produce data
     with open("/home/vunm/analysis-log/msoha-27-rq.log") as f:
         iters = itertools.chain(f, (None,)*num_workers)
+        print("===iters===", iters)
         for num_and_line in enumerate(iters):
             work.put(num_and_line)
 
     for p in pool:
         p.join()
 
-    # get the results
-    # example:  [(1, "foo"), (10, "bar"), (0, "start")]
-    print(sorted(results))
+    print(results)
