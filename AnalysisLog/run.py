@@ -26,6 +26,7 @@ def do_work(in_queue, out_list):
         # fake work
         # time.sleep(.5)
         result = (line_no, line)
+        print("===result===", result)
 
         out_list.append(result)
 
