@@ -41,6 +41,7 @@ if __name__ == "__main__":
     with open("/home/vunm/analysis-log/msoha-27-rq.log") as logs:
         # iters = itertools.chain(f, (None,)*num_workers)
         for line in logs:
+            print("===line===", line)
             work.put(line)
     # start for workers    
     pool = []
