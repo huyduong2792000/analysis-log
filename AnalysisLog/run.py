@@ -3,6 +3,8 @@ from multiprocessing import Process, Manager
 import time
 import itertools 
 
+TOPIC = 'test-druid5'
+
 conf = '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $rest_value'
 regex = ''.join(
         '(?P<' + g + '>.*)' if g else re.escape(c)
@@ -14,6 +16,11 @@ def parse_log_to_dict(raw_log = None):
         return m.groupdict()
     return {}
 
+def stream(raw_log):
+    dict_log = parse_log_to_dict(raw_log)
+    if dict_log:
+        future = json_producer.send(TOPIC, dict_log)
+        json_producer.flush()
 def do_work(in_queue, out_list):
     while True:
         item = in_queue.get()
@@ -25,7 +32,7 @@ def do_work(in_queue, out_list):
 
         # fake work
         # time.sleep(.5)
-        # print("===result===", result)
+        print("===line===", line)
         out_list.append(line)
 
 
