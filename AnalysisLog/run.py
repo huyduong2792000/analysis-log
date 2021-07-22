@@ -45,16 +45,16 @@ if __name__ == "__main__":
             print("===line===", line)
             work.put(line)
     # start for workers    
-    pool = []
-    for i in range(0, num_workers):
-        p = Process(target=do_work, args=(work))
-        p.daemon = True
-        p.start()
-        pool.append(p)
+        pool = []
+        for i in range(0, num_workers):
+            p = Process(target=do_work, args=(work))
+            p.daemon = True
+            p.start()
+            pool.append(p)
 
-    # produce data
+        # produce data
 
-    for p in pool:
-        p.join()
+        for p in pool:
+            p.join()
 
     # print(results)
