@@ -33,11 +33,14 @@ def load_files(log_dir):
     return onlyfiles
 
 def parse_log_to_dict(raw_log = None):
-    for regex in list_regex:
-        m = re.match(regex, raw_log)
-        if m:
-            return m.groupdict()
-    return None
+    m = re.match(list_regex[0], raw_log)
+    if m:
+        return m.groupdict()
+    # for regex in list_regex:
+    #     m = re.match(regex, raw_log)
+    #     if m:
+    #         return m.groupdict()
+    # return None
 
 def stream(raw_log, file_name):
     dict_log = parse_log_to_dict(raw_log)
