@@ -1,60 +1,70 @@
 import re
+# import os
 import json
-from multiprocessing import Process, Manager
 import time
-import itertools 
+from multiprocessing import Pool, cpu_count
+from collections import defaultdict
 from kafka import KafkaProducer
+from manager import Manager
 
-TOPIC = 'test-druid5'
+from os import listdir
+from os.path import isfile, join
+# onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+
+manager = Manager()
+
 json_producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v, indent = 4).encode('utf-8'))
+log_dir = '/home/vunm/analysis-log'
+TOPIC = 'test-druid5'
 
-conf = '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $rest_value'
-regex = ''.join(
+list_cofig = [
+    '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $rest_value'
+]
+list_regex = []
+
+for conf in list_cofig:
+    regex = ''.join(
         '(?P<' + g + '>.*)' if g else re.escape(c)
         for g, c in re.findall(r'\$(\w+)|(.)', conf))
+    list_regex.append(regex)
+
+def load_files(log_dir):
+    onlyfiles = [f for f in listdir(log_dir) if isfile(join(log_dir, f))]
+    print ('Số file:', len(onlyfiles))
+    return onlyfiles
 
 def parse_log_to_dict(raw_log = None):
-    m = re.match(regex, raw_log)
+    m = re.match(list_regex[0], raw_log)
     if m:
         return m.groupdict()
     return {}
+    # for regex in list_regex:
+    #     m = re.match(regex, raw_log)
+    #     if m:
+    #         return m.groupdict()
+    # return None
 
-def stream(raw_log):
+def stream(raw_log, file_name):
     dict_log = parse_log_to_dict(raw_log)
-    print("===dict_log===", dict_log)
-    if dict_log:
-        future = json_producer.send(TOPIC, dict_log)
-        json_producer.flush()
-def do_work(in_queue):
-    while True:
-        line = in_queue.get()
-        print("===line===", line)
-        # stream(line)
+    dict_log['file_name'] = file_name
+    # if dict_log:
+    #     future = json_producer.send(TOPIC, dict_log)
+    #     json_producer.flush(30)
+@manager.command
+def run():
+    start = time.time()
+    log_count = 0
+    files = load_files(log_dir)
+    print("===", files)
+    # pool = Pool(processes=cpu_count())
+    for file_name in files:
+        with open('{log_dir}/{file_name}'.format(log_dir = log_dir, file_name = file_name)) as logs:
+            for line in logs:
+                log_count += 1
+                # print("===log_count===", log_count)
+                stream(line, file_name)
+    stop = time.time()
 
-
-if __name__ == "__main__":
-    num_workers = 4
-
-    manager = Manager()
-    results = manager.list()
-    work = manager.Queue(num_workers)
-
-    with open("/home/vunm/analysis-log/msoha-27-rq.log") as logs:
-        # iters = itertools.chain(f, (None,)*num_workers)
-        for line in logs:
-            print("===line===", line)
-            work.put(line)
-    # start for workers    
-        pool = []
-        for i in range(0, num_workers):
-            p = Process(target=do_work, args=(work))
-            p.daemon = True
-            p.start()
-            pool.append(p)
-
-        # produce data
-
-        for p in pool:
-            p.join()
-
-    # print(results)
+    print("===duration===", stop - start)
+# if __name__ == '__main__':
+#     manager.main()
