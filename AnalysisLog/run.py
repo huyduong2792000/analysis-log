@@ -26,7 +26,6 @@ for conf in list_cofig:
         for g, c in re.findall(r'\$(\w+)|(.)', conf))
     list_regex.append(regex)
 
-
 def load_files(log_dir):
     onlyfiles = [f for f in listdir(log_dir) if isfile(join(log_dir, f))]
     print ('Số file:', len(onlyfiles))
@@ -34,8 +33,8 @@ def load_files(log_dir):
 
 def parse_log_to_dict(raw_log = None):
     m = re.match(list_regex[0], raw_log)
-    # if m:
-    #     return m.groupdict()
+    if m:
+        return m.groupdict()
     return {}
     # for regex in list_regex:
     #     m = re.match(regex, raw_log)
