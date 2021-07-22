@@ -44,17 +44,18 @@ def stream(raw_log, file_name):
     dict_log['file_name'] = file_name
     if dict_log:
         future = json_producer.send(TOPIC, dict_log)
-        result = future.get(timeout=60)
-        print("===result===", result)
         json_producer.flush(30)
 @manager.command
 def run():
+    start = time.time()
     files = load_files(log_dir)
     print("===", files)
     for file_name in files:
         with open('{log_dir}/{file_name}'.format(log_dir = log_dir, file_name = file_name)) as logs:
             for line in logs:
                 stream(line, file_name)
+    stop = time.time()
 
+    print("===duration===", stop - start)
 if __name__ == '__main__':
     manager.main()
