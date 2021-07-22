@@ -60,7 +60,7 @@ def run():
             for line in logs:
                 log_count += 1
                 # print("===log_count===", log_count)
-                # stream(line, file_name)
+                stream(line, file_name)
     stop = time.time()
 
     print("===duration===", stop - start)
