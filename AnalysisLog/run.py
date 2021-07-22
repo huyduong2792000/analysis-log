@@ -29,11 +29,11 @@ def do_work(in_queue, out_list):
         # exit signal 
         if line == None:
             return
-
+        stream(line)
         # fake work
         # time.sleep(.5)
-        print("===line===", line)
-        out_list.append(line)
+        # print("===line===", line)
+        # out_list.append(line)
 
 
 if __name__ == "__main__":
