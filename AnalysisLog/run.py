@@ -29,7 +29,7 @@ def do_work(in_queue, out_list):
     while True:
         item = in_queue.get()
         line = item
-
+        print("===line===", line)
         # exit signal 
         # if line == None:
         #     return
