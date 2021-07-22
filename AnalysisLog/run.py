@@ -28,7 +28,7 @@ for conf in list_cofig:
 
 
 def load_files(log_dir):
-    onlyfiles = [f for f in listdir(log_dir) if isfile(join(mypath, f))]
+    onlyfiles = [f for f in listdir(log_dir) if isfile(join(log_dir, f))]
     print ('Số file:', len(onlyfiles))
     return onlyfiles
 
