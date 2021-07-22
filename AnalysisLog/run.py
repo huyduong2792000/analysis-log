@@ -44,7 +44,7 @@ def stream(raw_log, file_name):
     dict_log['file_name'] = file_name
     if dict_log:
         json_producer.send(TOPIC, dict_log)
-        json_producer.flush(300)
+        # json_producer.flush(30)
 
 @manager.command
 def run():
