@@ -51,7 +51,7 @@ def run():
     files = load_files(log_dir)
     print("===", files)
     for file_name in files:
-        with open('log_dir/{file_name}'.format(file_name = file_name)) as logs:
+        with open('{log_dir}/{file_name}'.format(log_dir = log_dir, file_name = file_name)) as logs:
             for line in logs:
                 stream(line, file_name)
 
