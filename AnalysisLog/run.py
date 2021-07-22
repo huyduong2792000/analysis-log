@@ -60,7 +60,7 @@ if __name__ == "__main__":
         for line in logs:
             work.put(line)
 
-    for p in pool:
-        p.join()
+    # for p in pool:
+    #     p.join()
 
-    print(results)
+    # print(results)
