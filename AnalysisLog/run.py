@@ -2,8 +2,10 @@ import re
 from multiprocessing import Process, Manager
 import time
 import itertools 
+from kafka import KafkaProducer
 
 TOPIC = 'test-druid5'
+json_producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v, indent = 4).encode('utf-8'))
 
 conf = '$remote_addr $http_x_forwarded_for [$time_iso8601] $http_host "$request" $status $bytes_sent "$http_referer" "$http_user_agent" $rest_value'
 regex = ''.join(
