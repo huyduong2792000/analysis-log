@@ -7,7 +7,7 @@ from manager import Manager
 manager = Manager()
 
 json_producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v, indent = 4).encode('utf-8'))
-log_dir = '/'
+log_dir = '/home/vunm/analysis-log'
 TOPIC = 'test-druid5'
 
 list_cofig = [
@@ -42,7 +42,8 @@ def stream(raw_log, file_name):
 
 @manager.command
 def run():
-    files = load_files(log_dir)
+    files = load_files()
+    print("===", files)
     for file_name in files:
         with open('log_dir/{file_name}'.format(file_name = file_name)) as logs:
             for line in logs:
