@@ -47,6 +47,10 @@ if __name__ == "__main__":
     results = manager.list()
     work = manager.Queue(num_workers)
 
+    with open("/home/vunm/analysis-log/msoha-27-rq.log") as logs:
+        # iters = itertools.chain(f, (None,)*num_workers)
+        for line in logs:
+            work.put(line)
     # start for workers    
     pool = []
     for i in range(0, num_workers):
@@ -55,10 +59,6 @@ if __name__ == "__main__":
         pool.append(p)
 
     # produce data
-    with open("/home/vunm/analysis-log/msoha-27-rq.log") as logs:
-        # iters = itertools.chain(f, (None,)*num_workers)
-        for line in logs:
-            work.put(line)
 
     # for p in pool:
     #     p.join()
