@@ -31,8 +31,8 @@ def do_work(in_queue, out_list):
         line = item
 
         # exit signal 
-        if line == None:
-            return
+        # if line == None:
+        #     return
         stream(line)
         # fake work
         # time.sleep(.5)
