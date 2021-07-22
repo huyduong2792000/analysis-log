@@ -21,6 +21,7 @@ def parse_log_to_dict(raw_log = None):
 
 def stream(raw_log):
     dict_log = parse_log_to_dict(raw_log)
+    print("===dict_log===", dict_log)
     if dict_log:
         future = json_producer.send(TOPIC, dict_log)
         json_producer.flush()
