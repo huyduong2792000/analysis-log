@@ -25,6 +25,7 @@ for conf in list_cofig:
 def load_files(log_dir):
     list_file = os.listdir(os.path.expanduser(log_dir))
     print ('Số file:', len(list_file))
+    return list_file
 
 def parse_log_to_dict(raw_log = None):
     for regex in list_regex:
