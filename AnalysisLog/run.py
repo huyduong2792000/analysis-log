@@ -48,6 +48,7 @@ if __name__ == "__main__":
     pool = []
     for i in range(0, num_workers):
         p = Process(target=do_work, args=(work))
+        p.daemon = True
         p.start()
         pool.append(p)
 
